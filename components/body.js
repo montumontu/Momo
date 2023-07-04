@@ -1,7 +1,8 @@
-import {restList} from "./card";
+import {restList} from "./restList";
 import { RestCard } from "./card";
 
 const Body= () => {
+   console.log(restList);
     return(
       <>
       <div className="Search-container">
@@ -10,7 +11,7 @@ const Body= () => {
       </div>
       <div className="resturant-list">
         {restList.map((restaurant) => {
-          return < RestCard {...restaurant.data} />;
+          return < RestCard {...restaurant} />;
         })}
       </div>
       </>
