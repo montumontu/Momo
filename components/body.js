@@ -2,20 +2,20 @@ import { restList } from "./restList";
 import { RestCard } from "./card";
 import { useState } from "react";
 
-function filterData(searchInput, restList) {
-  const filterData = restList.filter((restaurant) =>
-    restlist.rname.includes(searchInput)
+function filterData(searchInput, restlist) {
+  const filterData = restlist.filter((restaurant) =>
+    restList.rname.includes(searchInput)
   );
   return filterData;
 }
 
 const Body = () => {
 
-  // const [restList, setrestList] = useState(restList);
-  // const [searchInput, setsearchInput] = useState();
+   const [restlist, setrestList] = useState(restList);
+   const [searchInput, setsearchInput] = useState();
   return (
     <>
-      {/* <div className="Search-container">
+      { <div className="Search-container">
         <input
           type="text"
           className="search-input"
@@ -28,12 +28,12 @@ const Body = () => {
         />
 
         <button className="search-btn" onClick={() => {
-          const data = filterData(searchInput, restList);
+          const data = filterData(searchInput, restlist);
           setrestList(data);
 
         }}
         >Search</button>
-      </div> */}
+      </div> }
 
       <div className="resturant-list">
         {restList.map((restaurant) => {
