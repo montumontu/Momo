@@ -2,16 +2,16 @@ import { restList } from "./restList";
 import { RestCard } from "./card";
 import { useState } from "react";
 
-function filterData(searchInput, restlist) {
-  const filterData = restlist.filter((restaurant) =>
-    restList.rname.includes(searchInput)
+function filterData(searchInput, restaurantlist) {
+  const filterData = restaurantlist.filter((restaurant) =>
+    rname.includes(searchInput)
   );
   return filterData;
 }
 
 const Body = () => {
 
-   const [restlist, setrestList] = useState(restList);
+   const [restaurantlist, setrestList] = useState(restList);
    const [searchInput, setsearchInput] = useState();
   return (
     <>
@@ -28,7 +28,7 @@ const Body = () => {
         />
 
         <button className="search-btn" onClick={() => {
-          const data = filterData(searchInput, restlist);
+          const data = filterData(searchInput, restaurantlist);
           setrestList(data);
 
         }}
@@ -36,7 +36,7 @@ const Body = () => {
       </div> }
 
       <div className="resturant-list">
-        {restList.map((restaurant) => {
+        {restaurantlist.map((restaurant) => {
           return < RestCard {...restaurant} key={restaurant.id} />;
         })}
       </div>
